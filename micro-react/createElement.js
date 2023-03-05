@@ -14,7 +14,7 @@ function createElement(type, props, ...children) {
 //当子节点为文本时，当作一个TEXT_ELEMENT标签去处理
 function createTextElement(text) {
   return {
-    type: "text",
+    type: "TEXT_ELEMENT",
     props: {
       nodeValue: text,
       children: [],

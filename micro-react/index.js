@@ -1,2 +1,3 @@
 import createElement from "./createElement";
-export { createElement };
+import render from "./render";
+export { createElement, render };

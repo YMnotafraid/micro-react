@@ -1,9 +1,14 @@
-import { createElement } from "./micro-react";
+import { createElement, render } from "./micro-react";
 
 const element = createElement(
-  "div",
-  { id: "title" },
+  "h1",
+  { id: "title", style: "background: orange" },
   "hello world",
-  createElement("h1")
+  createElement(
+    "a",
+    { style: "color:white", href: "https://bilibili.com" },
+    "bilibili"
+  )
 );
-console.log(element);
+const root = document.querySelector("#root");
+render(element, root);
