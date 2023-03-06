@@ -1,15 +1,10 @@
 import { createElement, render } from "./micro-react";
 
-const element = createElement(
-  "h1",
-  { id: "title", style: "background: orange" },
-  "hulu",
-  createElement(
-    "a",
-    { style: "color:white", href: "https://bilibili.com" },
-    "bilibili"
-  ),
-  createElement("span", { style: "color:red" }, "youtube")
-);
+const App = (props) => {
+  return createElement("h1", null, "Hi ", props.name);
+};
+
+const element = createElement(App, { name: "ym" });
 const root = document.querySelector("#root");
+
 render(element, root);
