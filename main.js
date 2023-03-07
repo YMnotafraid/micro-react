@@ -1,10 +1,11 @@
-import { createElement, render } from "./micro-react";
+import { createElement, render, useState } from "./micro-react";
 
-const App = (props) => {
-  return createElement("h1", null, "Hi ", props.name);
-};
+function Counter() {
+  const [state, setState] = useState(1);
+  return createElement("h1", { onclick: () => setState((c) => c + 1) }, state);
+}
 
-const element = createElement(App, { name: "ym" });
+const element = createElement(Counter);
 const root = document.querySelector("#root");
 
 render(element, root);
